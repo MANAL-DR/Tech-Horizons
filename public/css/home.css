@@ -1,0 +1,238 @@
+*{
+    text-decoration: none;
+    box-sizing: border-box;
+    margin:0px;
+
+}
+#menu{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position:sticky;
+    top:0;
+    left:0;
+    padding: 0;
+    z-index: 10;
+    background-color: white;
+    width:100%;
+    
+}
+.boxcontainer{
+    background-color: rgb(0, 0, 0);
+    margin: 90px 0px;
+    display: flex;
+    align-items: left;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.box {
+    margin :30px;
+    width: 28%;
+    height:380px;
+    background-color: white;
+    border-radius: 3%;
+    z-index: 8;
+    transition: all 0.3s ease-out;
+}
+.boxcontainer > h1{
+    color: white;
+    font-weight: 100;
+    font-size: 20px;
+    display: block;
+    margin-top: 15px;
+    margin-left: 3%;
+}
+.boxwrapper{
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    flex-wrap: wrap;
+}
+a{
+    text-decoration: none;
+    color: black;
+}
+#logo{
+    color:#c73131;
+    font-size:50px;
+    font-weight: 900;
+    margin-left: 10px;
+}
+#menu li{
+    padding-right: 90px;
+    display: inline-block;
+    list-style-type: none;
+    margin-right:22px;
+    font-size: 24px;
+    font-weight: 400;
+    transition: all 0.3s ease-out 0s;
+}
+#menu li:hover{
+    cursor: pointer;
+    color:#c73131;
+}
+/*
+li #dropdown a{
+    display: block;
+    width: 70px;
+    position: absolute;
+    padding: 10px 0px;
+
+}*/
+
+.dropdown-menu {
+    display: none;  
+    position: absolute;
+    top:80%;
+   /*Position below parent li */
+    background-color: white;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    z-index: 100;
+    border-radius: 5px;
+    width: 200px;
+    transition: all 0.3s ;
+}
+.dropdown-menu a {
+    display: block;
+    padding: 10px;
+    border-bottom: 1px solid #ddd; /* Separator */
+}
+.dropdown:hover .dropdown-menu {
+    display: block;
+}
+button, button a{
+    padding: 10px;
+    border:none;
+    margin:5px;
+    background-color:  #B63131;
+    color:rgb(235, 228, 228);
+    border-radius: 5px;
+    box-shadow: -3px 7px 10px -8px rgb(66, 33, 28);
+    transition : all 0.2s ease-in-out;
+    font-weight: 700;
+}
+.load{
+    width:20%;
+    height: 50px;
+    position: relative;
+    left:40%;
+    margin-bottom: 20px;
+}
+button:hover , #exit:hover {
+    transform: scale(1.04);
+    cursor: pointer;
+}
+button:active{
+    transform: scale(0.99);
+    cursor: pointer;
+}
+.box:hover{
+    transform: scale(1.02);
+}
+#slogan{
+    font-size: 45px;
+    font-weight: 900;
+    width: 65%;
+    margin: 70px 10px;
+    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+
+.box h3{
+    color:black;
+    text-align: center;
+    font-size: 22px;
+    margin-top: 65%;
+}
+.box h3:hover{
+    cursor: pointer;
+    color:#B63131;
+}
+
+.box p{
+    color:black;
+    font-size: 18px;
+    line-height: 1.8;
+    padding-left:10px;
+}
+#inscrire{
+    width:25%;
+    padding:10px;
+    margin-top:15%;
+    position: absolute;
+    z-index: 50;
+    left:50%;
+    background-color: #ff8b8b;
+    transform: translate(-50%);
+    border-radius: 5%;
+    box-shadow: 3px 20px 10px -12px rgb(126, 126, 126);
+    display:none;
+}
+#inscrire h1{
+    margin-top: 38px;
+    font-size: 22px;
+}
+#exit{
+    font-size: 32px;
+    float: right;
+    margin-top: 0px;
+    margin-right: 5px;
+    cursor: pointer;
+}
+
+
+.slider {
+    display: flex;
+    width: 100%; 
+    overflow: hidden; 
+    transition: transform 0.5s ease-in-out;
+}
+
+.slider-1 {
+    width: 100%;
+    margin: 10px auto;
+    overflow: hidden;
+    position: relative;
+  
+  }
+  .slider-1 .box {
+    flex-shrink: 0;
+  }
+
+#right, #left {
+    font-size: 50px;
+    color: #c93e3e;
+    position: absolute;
+    z-index: 20;
+    font-weight: 900;
+    opacity: 0.6;
+    top:45%;
+}
+#right{
+right: 0;
+}
+#left{
+    left: 0;
+}
+/*
+@keyframes slider-1 {
+    0%,
+    20% {
+      transform: translateX(0);
+    }
+    25%,
+    45% {
+      transform: translateX(-20%);
+    }
+    50%,
+    70% {
+      transform: translateX(-40%);
+    }
+    75%,
+    95% {
+      transform: translateX(-60%);
+    }
+    100% {
+      transform: translateX(-80%);
+    }
+  } 
+*/
