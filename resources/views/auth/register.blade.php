@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Inscription</title>
-    <link href="{{ asset('css/custom.css') }}" rel="stylesheet"> <!-- Lien vers votre CSS personnalisé -->
+    <link href="{{ asset('css/custom.css') }}" rel="stylesheet">
 </head>
 <body>
     <div class="logo-container">
@@ -12,7 +12,7 @@
     </div>
     <div class=form-wrapper>
     <div class="register-container">
-        <h1>Inscription</h1>
+        <h1>Subscription</h1>
 
         <!-- Affichage des erreurs générales -->
         @if ($errors->any())
@@ -31,7 +31,7 @@
 
             <!-- Champ Nom -->
             <div class="form-group">
-                <label for="name">Nom</label>
+                <label for="name">Name</label>
                 <input id="name" type="text" name="name" value="{{ old('name') }}" required autofocus>
                 @error('name')
                     <span class="error">{{ $message }}</span>
@@ -49,7 +49,7 @@
 
             <!-- Champ Mot de passe -->
             <div class="form-group">
-                <label for="password">Mot de passe</label>
+                <label for="password">Password</label>
                 <input id="password" type="password" name="password" required>
                 @error('password')
                     <span class="error">{{ $message }}</span>
@@ -58,18 +58,18 @@
 
             <!-- Champ Confirmation du mot de passe -->
             <div class="form-group">
-                <label for="password_confirmation">Confirmer le mot de passe</label>
+                <label for="password_confirmation">Confirme Password</label>
                 <input id="password_confirmation" type="password" name="password_confirmation" required>
             </div>
 
             <!-- Bouton d'inscription -->
             <div class="form-group">
-                <button type="submit">S'inscrire</button>
+                <button type="submit">Sign up</button>
             </div>
         </form>
 
         <!-- Lien vers la page de connexion -->
-        <p>Déjà inscrit ? <a href="{{ route('login') }}">Se connecter</a></p>
+        <p>Already Registered ? <a href="/access">Sign in</a></p>
     </div>
     </div>
 </body>

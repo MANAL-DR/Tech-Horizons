@@ -10,7 +10,7 @@ class Numero extends Model
         'title', 'description', 'status', 'publication_date',
     ];
 
-    public function articles()
+    public function Articles()
     {
       return $this->hasMany(Article::class,'numeros_id');
     }

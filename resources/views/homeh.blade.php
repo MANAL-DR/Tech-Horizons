@@ -5,7 +5,7 @@
 @section('body')
    <div id="slogan">"For Tech Enthusiasts, By Tech <br> Enthusiasts"<br>Get Your Daily Dose of Insights, Innovation, and Empowerment</div>
    <div class="boxcontainer">
-      <h1>Numéros publics</h1>
+      <h1 class="box-title">Discover Our Public Editions</h1>
       <div class="boxwrapper">
       @foreach($publicNum as $num)
       <div class="box">

@@ -12,45 +12,15 @@
     top:0;
     left:0;
     padding: 0;
-    z-index: 10;
+    z-index: 50;
     background-color: white;
     width:100%;
     
 }
-.boxcontainer{
-    background-color: rgb(0, 0, 0);
-    margin: 90px 0px;
-    display: flex;
-    align-items: left;
-    flex-direction: column;
-    justify-content: space-between;
-}
-.box {
-    margin :30px;
-    width: 28%;
-    height:380px;
-    background-color: white;
-    border-radius: 3%;
-    z-index: 8;
-    transition: all 0.3s ease-out;
-}
-.boxcontainer > h1{
-    color: white;
-    font-weight: 100;
-    font-size: 20px;
-    display: block;
-    margin-top: 15px;
-    margin-left: 3%;
-}
-.boxwrapper{
-    display: flex;
-    justify-content: space-between;
-    width: 100%;
-    flex-wrap: wrap;
-}
 a{
     text-decoration: none;
     color: black;
+    transition: all 0.4s ease-in-out;
 }
 #logo{
     color:#c73131;
@@ -59,10 +29,9 @@ a{
     margin-left: 10px;
 }
 #menu li{
-    padding-right: 90px;
     display: inline-block;
     list-style-type: none;
-    margin-right:22px;
+    margin-right:40px;
     font-size: 24px;
     font-weight: 400;
     transition: all 0.3s ease-out 0s;
@@ -71,36 +40,44 @@ a{
     cursor: pointer;
     color:#c73131;
 }
-/*
-li #dropdown a{
-    display: block;
-    width: 70px;
-    position: absolute;
-    padding: 10px 0px;
-
-}*/
-
 .dropdown-menu {
     display: none;  
     position: absolute;
-    top:80%;
-   /*Position below parent li */
-    background-color: white;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    top:75%;
+    background-color: rgb(255, 244, 244);
+    box-shadow: 0 4px 5px rgba(0, 0, 0, 0.1);
     z-index: 100;
-    border-radius: 5px;
     width: 200px;
-    transition: all 0.3s ;
+    transition: all 0.3s ease-in-out;
 }
-.dropdown-menu a {
+.dropdown-menu:hover li {
+    display: block;
+    cursor: pointer;
+
+}
+.dropdown-menu li :hover {
+    padding: 10px;
+    color: #c73131;
+    
+}
+
+.dropdown-menu li{
+   padding:8px;
+}
+
+
+.dropdown-menu input {
     display: block;
     padding: 10px;
-    border-bottom: 1px solid #ddd; /* Separator */
+    border:none;
+    font-size: 20px;
+    cursor: pointer;
 }
 .dropdown:hover .dropdown-menu {
     display: block;
 }
-button, button a{
+
+button, button a, .btn{
     padding: 10px;
     border:none;
     margin:5px;
@@ -118,11 +95,11 @@ button, button a{
     left:40%;
     margin-bottom: 20px;
 }
-button:hover , #exit:hover {
+button:hover , #exit:hover,.btn:hover {
     transform: scale(1.04);
     cursor: pointer;
 }
-button:active{
+button:active,.btn:active{
     transform: scale(0.99);
     cursor: pointer;
 }
@@ -133,8 +110,92 @@ button:active{
     font-size: 45px;
     font-weight: 900;
     width: 65%;
-    margin: 70px 10px;
+    position: relative;
+    left:50%;
+    transform: translate(-50%);
+    text-align: center;
+    margin: 55px 0px 30px 0px;
     font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+
+#welcome {
+    font-size: 22px;
+    text-align: center;
+    line-height: 1.6;
+    color: #555;
+    margin-bottom: 30px;
+    padding: 0 15px; /* For small screen responsiveness */
+}
+span {
+    display: block;
+    font-size: 26px;
+    font-weight: 600;
+    text-align: center;
+    color: #2a2a2a;
+    margin-top: 20px;
+}
+#inscrire{
+    width:25%;
+    padding:10px;
+    position: fixed;
+    top: -100%;
+    z-index: 40;
+    left:50%;
+    background-color: #f15c5c9f;
+    transform: translate(-50%);
+    border-radius: 5%;
+    box-shadow: 3px 10px 5px -5px rgba(24, 24, 24, 0.582);
+    transition: top 0.4s ease-in-out, opacity 0.5s ease-in-out;
+    opacity:0;
+}
+#inscrire.active{
+    top:15%;
+    opacity: 1;
+}
+#inscrire h1{
+    margin-top: 38px;
+    font-size: 22px;
+}
+.box-title{
+    font-size: 24px;
+    color: white;
+    margin-left: 10px;
+}
+
+/*article boxes style  */
+
+.boxcontainer{
+    background-color: rgb(0, 0, 0);
+    margin: 90px 0px;
+    display: flex;
+    align-items: left;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.box {
+    margin: 25px;
+    flex: 0 0 auto;
+    width: 390px;
+    height:380px;
+    background-color: white;
+    overflow: hidden;
+    border-radius: 3%;
+    z-index: 8;
+    transition: all 0.3s ease-out;
+}
+.boxcontainer > h1{
+    color: white;
+    font-weight: 100;
+    font-size: 20px;
+    display: block;
+    margin-top: 15px;
+    margin-left: 3%;
+}
+.boxwrapper{
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    flex-wrap: wrap;
 }
 
 .box h3{
@@ -154,23 +215,6 @@ button:active{
     line-height: 1.8;
     padding-left:10px;
 }
-#inscrire{
-    width:25%;
-    padding:10px;
-    margin-top:15%;
-    position: absolute;
-    z-index: 50;
-    left:50%;
-    background-color: #ff8b8b;
-    transform: translate(-50%);
-    border-radius: 5%;
-    box-shadow: 3px 20px 10px -12px rgb(126, 126, 126);
-    display:none;
-}
-#inscrire h1{
-    margin-top: 38px;
-    font-size: 22px;
-}
 #exit{
     font-size: 32px;
     float: right;
@@ -179,25 +223,23 @@ button:active{
     cursor: pointer;
 }
 
+/* slider for articles */
+
 
 .slider {
     display: flex;
-    width: 100%; 
-    overflow: hidden; 
+    justify-content: flex-start; 
+    gap: 0; 
     transition: transform 0.5s ease-in-out;
+    
 }
 
 .slider-1 {
     width: 100%;
     margin: 10px auto;
-    overflow: hidden;
     position: relative;
   
   }
-  .slider-1 .box {
-    flex-shrink: 0;
-  }
-
 #right, #left {
     font-size: 50px;
     color: #c93e3e;
@@ -213,26 +255,3 @@ right: 0;
 #left{
     left: 0;
 }
-/*
-@keyframes slider-1 {
-    0%,
-    20% {
-      transform: translateX(0);
-    }
-    25%,
-    45% {
-      transform: translateX(-20%);
-    }
-    50%,
-    70% {
-      transform: translateX(-40%);
-    }
-    75%,
-    95% {
-      transform: translateX(-60%);
-    }
-    100% {
-      transform: translateX(-80%);
-    }
-  } 
-*/

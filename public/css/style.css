@@ -82,6 +82,31 @@ body {
         );
     pointer-events: none;
 }
+#exit{
+    font-size: 32px;
+    float: right;
+    margin-top: 0px;
+    margin-right: 5px;
+    cursor: pointer;
+}
+#warning{
+    width:30%;
+    height:70px;
+    font-size: 18px;
+    font-weight: 700;
+    position:absolute;
+    left:50%;
+    top:20px;
+    transform: translate(-50%);
+    z-index: 10;
+    background-color:#aa2e2e;
+    color: white;
+    margin-bottom: 50px;
+    padding: 25px 0px;
+    text-align: center;
+    border-radius: 2%;
+    box-shadow: 8px 10px 8px -10px rgb(71, 71, 71);
+}
 
 .content-wrapper {
     max-width: 600px;

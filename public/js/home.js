@@ -1,8 +1,7 @@
 var box=document.getElementById('inscrire');
 function inscrire(){
-    box.style.display="block";
+    box.classList.add("active");
 }
 function exit(){
-    if(box.style.display=="block")
-         box.style.display="none";
+    document.getElementById("inscrire").classList.remove("active");
 }

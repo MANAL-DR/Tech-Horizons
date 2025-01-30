@@ -14,9 +14,17 @@ class AuthenticatedSessionController extends Controller
     /**
      * Display the login view.
      */
-    public function create(): View
+    public function create(Request $request): View
     {
-        return view('auth.login');
+        ;
+        if($request->is('login/subscriber')){
+            $role='subscriber';
+        }elseif($request->is('login/manager')){
+            $role='theme_manager';
+        }else{
+            $role='editor';
+        }
+        return view('auth.login',['role'=>$role]);
     }
 
     /**
@@ -24,11 +32,31 @@ class AuthenticatedSessionController extends Controller
      */
     public function store(LoginRequest $request): RedirectResponse
     {
+        
         $request->authenticate();
 
+        $expectedRole=$request->role;
+        $user= Auth::user();
+        $role=$user->role;
+
+        if($user->role !== $expectedRole){
+
+            Auth::guard('web')->logout();
+            $request->session()->invalidate();
+            $request->session()->regenerateToken();
+            
+            $request->session()->put('login_error', 'Are you sure you are '.$expectedRole.' ?');
+
+            return redirect()->route('access');
+
+        }
+        else{
         $request->session()->regenerate();
 
+        //return redirect()->intended(route('dashboard.'.$role, absolute: false));
+        
         return redirect()->intended(route('dashboard', absolute: false));
+        }
     }
 
     /**

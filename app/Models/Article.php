@@ -7,16 +7,16 @@ use Illuminate\Database\Eloquent\Model;
 class article extends Model
 {
     protected $fillable = [
-        'title', 'content', 'theme_id','numeros_id', 'author_id',  'created_at',
+        'title', 'content', 'theme_id','numeros_id', 'user_id','status', 'created_at',
     ];
     public function theme()
     {
-        return $this->belongsTo(Theme::class);
+        return $this->belongsTo(Theme::class,'theme_id');
     }
 
     public function user()
     {
-        return $this->belongsTo(User::class);
+        return $this->belongsTo(User::class,'user_id');
     }
     public function numero()
     {
@@ -26,8 +26,8 @@ class article extends Model
     {
         return $this->hasMany(Note::class);
     }
-    public function commentaire()
+    public function commentaires()
     {
-        return $this->hasOne(Commentaire::class);
+        return $this->hasMany(Commentaire::class);
     }
 }

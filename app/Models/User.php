@@ -30,6 +30,8 @@ class User extends Authenticatable
      * @var list<string>
      */
     protected $hidden = [
+        'name',
+        'email',
         'password',
         'remember_token',
     ];
@@ -46,9 +48,21 @@ class User extends Authenticatable
             'password' => 'hashed',
         ];
     }
-    public function abonnements()
+    public function subscriptions()
     {
-        return $this->hasMany(Abonnement::class);
+        return $this->hasMany(Subscription::class);
+    }
+    public function subscribedThemes()
+    {
+        return $this->belongsToMany(Theme::class, 'subscriptions', 'user_id', 'theme_id');
+    }
+    public function themes()
+    {
+        return $this->belongsToMany(Theme::class);
+    }
+    public function managedTheme()
+    {
+        return $this->belongsTo(Theme::class, 'theme_id');
     }
     public function articles()
     {
@@ -62,4 +76,13 @@ class User extends Authenticatable
     {
         return $this->hasMany(Commentaire::class);
     }
+    public function isManager()
+    {
+        return $this->role === 'theme_manager';
+    }
+    
+     public function isSubscriber()
+     {
+         return $this->role === 'subscriber';
+     }
 }
