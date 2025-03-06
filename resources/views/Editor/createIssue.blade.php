@@ -42,7 +42,7 @@
             <td>{{ $proposal->title }}</td>
             <td>{{ $proposal->content }}</td>
             <td>{{ $proposal->theme->name }}</td>
-            <td>{{ $proposal->user->name }} ({{ $proposal->user->email }})</td>
+            <td>{{ $proposal->user->name }}<br> ({{ $proposal->user->email }})</td>
             <td><input  type="checkbox" name="articlesid[]" value="{{$proposal->id}}"></td> 
         </tr>
         @endforeach

@@ -13,7 +13,6 @@
 @section('contenu')
 <h1>Write, Refine, Publish: Your Articles Dashboard</h1>
 <div class="new">
-    
     <form action="{{route('article.store')}}" method="POST">
         @csrf
         <div class="form-wrapper">
@@ -23,7 +22,7 @@
             <input class="txt" type="text" name="title">
 
         <div>
-            <label for="theme_id">Theme</label><br>
+            <label for="theme_id">Theme</label>
             <select class='styled-select' name="theme_id" id="theme_id">
                 @foreach ($themes as $theme)
                 <option class='styled-option' value="{{$theme->id}}">
@@ -36,6 +35,9 @@
         <div>
             <label for="contenu">Contenu</label>
             <input class="txt" type="text" name="content">
+            <label for="imageInput" class="custom-file-input">Upload Image</label>
+            <input type="file" name="image" accept="images/*" id="imageInput" style="display: none;">
+            <img id="imagePreview" style="max-width: 300px; display: none;" alt="Image Preview">
         </div>
          
         <div>
@@ -63,6 +65,7 @@
             <td>{{$article->content}}</td>
             <td>{{$article->theme->name}}</td>
             <td>{{$article->status}}</td>
+            @if($article->status==='pending' || $article->status==='rejected')
             <td><a href="/article/edit/{{$article->id}}"><button>Edit</button></a></td>
             <td>
                 <form action="{{route('article.destroy',$article->id)}}" method="POST">
@@ -71,6 +74,7 @@
                     <button >DELETE</button>
                 </form>
             </td>
+            @endif
         </tr>
         @endforeach
     </table>

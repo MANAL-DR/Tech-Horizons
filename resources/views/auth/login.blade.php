@@ -1,14 +1,13 @@
 <!DOCTYPE html>
 <html lang="fr">
-    <!-- Session Status -->
     <x-auth-session-status class="mb-4" :status="session('status')" />
-    <head>
+<head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Inscription</title>
     <link href="{{ asset('css/custom.css') }}" rel="stylesheet">
 </head>
-    
+<body>
     <div class="logo-container">
         <h1>Tech Horizons</h1>
     </div>
@@ -17,7 +16,6 @@
         <div class="register-container">
             <h1>Se connecter</h1>
 
-            <!-- Affichage des erreurs générales -->
             @if ($errors->any())
                 <div class="alert alert-danger">
                     <ul>
@@ -65,3 +63,5 @@
         </div>
     </div>
 
+ </body>
+</html>

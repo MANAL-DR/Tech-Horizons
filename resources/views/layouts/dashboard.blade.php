@@ -21,6 +21,7 @@
    <footer>
 
    </footer>
+   <script type="text/javascript" src="{{asset('js/articlesSlider.js') }}"></script>
    @stack('scripts')
 </body>
 </html>

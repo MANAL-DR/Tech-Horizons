@@ -31,9 +31,10 @@
             </form>
             </tr>
             @endforeach
-        </table>
-
-        <script type="text/javascript" src="{{asset('js/editor.js')}}"></script>
+        </table>  
 @endsection
+@push('scripts')
+<script type="text/javascript" src="{{asset('js/editor.js')}}"></script>
+@endpush
 
 

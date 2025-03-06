@@ -1,15 +1,32 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tech-Horizons @yield('title')</title>
-    <link rel="stylesheet" href="{{ asset('css/home.css') }}">
-    <link rel="stylesheet" href="{{ asset('css/articles.css') }}">
-</head>
-<body>
+@extends('layouts.dashboard')
+
+@section('title','Tech-Horizons | ')
+
+@push('styles')
+  <link rel="stylesheet" href="{{ asset('css/editor.css') }}">
+  <link rel="stylesheet" href="{{ asset('css/home.css') }}">
+  <link rel="stylesheet" href="{{ asset('css/articles.css') }}">
+@endpush
+
+@section('navbar')
+@auth
+   @if(Auth::user()->role === 'subscriber')
+      @include('profile.partials.navbars.subscriber')
+    @elseif(Auth::user()->role === 'theme-manager')
+      @include('profile.partials.navbars.manager')
+    @else
+      @include('profile.partials.navbars.editor')
+    @endif
+@else
+ @include('profile.partials.navbars.guest')
+@endauth
+@endsection
+
+@section('contenu')
     <div class="container">
+        <img src="{{ asset($article->image_url) }}" style="max-width:1000px;">
         <h1 id="title">{{$article->title}}</h1>
+        
         <p class="mainp">
         {{$article->content}}
         </p>
@@ -50,8 +67,4 @@
         </div>
 
     </div>
-    
-    
-    
-</body>
-</html>
+@endsection   

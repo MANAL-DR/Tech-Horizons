@@ -4,6 +4,7 @@
 
 @push('styles')
   <link rel="stylesheet" href="{{ asset('css/editor.css') }}">
+  <link rel="stylesheet" href="{{ asset('css/statistics.css') }}">
 @endpush
 
 @section('navbar')
@@ -22,49 +23,36 @@
 
     <!-- Vérifier si les statistiques existent -->
     @if ($statistics)
-        <table class="table table-striped">
-            <thead>
-                <tr>
-                    <th>Statistic</th>
-                    <th>Value</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td>Total Articles</td>
-                    <td>{{ $statistics->total_articles }}</td>
-                </tr>
-                <tr>
-                    <td>Pending Proposals</td>
-                    <td>{{ $statistics->proposals_pending }}</td>
-                </tr>
-                <tr>
-                    <td>Approved Proposals</td>
-                    <td>{{ $statistics->proposals_approved }}</td>
-                </tr>
-                <tr>
-                    <td>Rejected Proposals</td>
-                    <td>{{ $statistics->proposals_rejected }}</td>
-                </tr>
-                <tr>
-                    <td>Total Subscribers</td>
-                    <td>{{ $statistics->total_subscribers }}</td>
-                </tr>
-            </tbody>
-        </table>
+    <div class="stats-container">
+        
+        <div class="stat-card">
+            <a href="/responsible/showarticles">
+            <h3>Total Articles</h3><br>
+            <p>{{ $statistics->total_articles }}</p>
+            </a>
+        </div>
+        
+        <div class="stat-card">
+            <h3>Pending Proposals</h3><br>
+            <p>{{ $statistics->proposals_pending }}</p>
+        </div>
+        <div class="stat-card">
+            <h3>Approved Proposals</h3><br>
+            <p>{{ $statistics->proposals_approved }}</p>
+        </div>
+
+        <div class="stat-card">
+            <a href="/responsible/subscribers">
+            <h3>Total Subscribers</h3><br>
+            <p>{{ $statistics->total_subscribers }}</p>
+            </a>
+        </div>
+    </div>
     @else
         <p>No statistics available for this theme.</p>
     @endif
 
     <!-- Bouton pour recalculer les statistiques -->
-<div>
-<!-- Liens utiles -->
-<div style="margin-top: 20px;">
-    <a href="{{ route('responsible.proposals') }}" class="btn">Manage Proposals</a>
-    <a href="{{ route('responsible.articles') }}" class="btn">Manage Articles</a>
-</div>
-
-</div>
 </div>
 
 @endsection

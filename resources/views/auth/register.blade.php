@@ -10,7 +10,7 @@
     <div class="logo-container">
         <h1>Tech Horizons</h1>
     </div>
-    <div class=form-wrapper>
+    <div class="form-wrapper">
     <div class="register-container">
         <h1>Subscription</h1>
 
@@ -67,8 +67,6 @@
                 <button type="submit">Sign up</button>
             </div>
         </form>
-
-        <!-- Lien vers la page de connexion -->
         <p>Already Registered ? <a href="/access">Sign in</a></p>
     </div>
     </div>

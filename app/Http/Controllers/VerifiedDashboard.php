@@ -13,7 +13,6 @@ class VerifiedDashboard extends Controller
         $role=$user->role;
 
         if($role=="subscriber"){
-            $user=Auth::user();
             $themes = Theme::whereHas('subscriptions', function($query) use ($user) {
             $query->where('user_id', $user->id); })->get();
             return view('dashboards.subscriber',compact('themes'));

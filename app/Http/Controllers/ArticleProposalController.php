@@ -85,7 +85,7 @@ class ArticleProposalController extends Controller
             return back()->with('error', 'Seules les propositions approuvées peuvent être proposées à l’éditeur.');
         }
 
-        // Mettre à jour le statut dans la table article_proposals
+        // Mettre à jour le statut dans la table article
         $proposal->update(['status' => 'proposed']);
 
         return back()->with('success', 'Proposition envoyée à l’éditeur.');

@@ -17,6 +17,9 @@
       @foreach($Numero->Articles as $article)
       <a href="/article/{{$article->id}}" target="_blank">
       <div class="box">
+         @if($article->image_url)
+            <img src="{{ url($article->image_url)}}" alt="Article Image" style="width: 100%; max-height:55%;">
+         @endif
          <h3>{{$article->title}}</h3>
          <p>{{$article->content}}</p>
       </div></a>

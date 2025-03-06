@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 class Numero extends Model
 {
     protected $fillable = [
-        'title', 'description', 'status', 'publication_date',
+        'title', 'description', 'status', 'publication_date','image_url',
     ];
 
     public function Articles()

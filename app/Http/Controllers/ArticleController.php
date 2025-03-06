@@ -148,7 +148,9 @@ class ArticleController extends Controller
         $article->delete();
         return redirect()->route('responsible.articles')->with('success', 'Article supprimé avec succès.');
     }
-                               //  Subscriber //
+
+    
+                            //  Subscriber //
 
     public function subscriberCreate()
         {
@@ -186,10 +188,15 @@ class ArticleController extends Controller
     public function subscriberStore(Request $request)
     {
        var_dump($request->all());
+       $imagePath = null;
+        if ($request->hasFile('image')) {
+            $imagePath = $request->file('image')->store('articles', 'public');
+        }
        Article::create([
         'title' => $request->title,
         'content' => $request->content,
         'theme_id' => $request->theme_id,
+        'image_url' =>$imagePath,
         'user_id' => Auth::id()
        ]);
        return back();

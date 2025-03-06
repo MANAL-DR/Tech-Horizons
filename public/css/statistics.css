@@ -1,0 +1,32 @@
+.stats-container {
+    width: 80%;
+    margin: 55px 0px 50px 140px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px; /* Space between cards */
+    justify-content: center; /* Centers cards */
+    padding: 10px;
+}
+
+.stat-card {
+    background: #f8f8f8; /* Light gray background */
+    padding: 40px 15px;
+    border-radius: 8px;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    min-width: 180px; /* Ensures proper sizing */
+    flex: 1; /* Allows flexibility */
+    height: 150px;
+    max-width: 250px;
+    transition:all 0.3s ease-out;
+}
+.stat-card:hover{
+    transform: scale(1.04);
+}
+h3{
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+p{
+    font-size: 30px;
+    color:#B63131;
+}

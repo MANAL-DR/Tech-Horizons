@@ -17,6 +17,11 @@ class ThemeController extends Controller
         $themes = Theme::all();
         return view('themes.all', compact('themes'));
     }
+    public function ShowallThemes()
+    {
+        $themes = Theme::all();
+        return view('themes.theme', compact('themes'));
+    }
 
     public function subscribe($id)
     {
@@ -133,4 +138,12 @@ class ThemeController extends Controller
 
         return view('responsible.stats', compact('theme', 'statistics'));
     }
+
+    public function ManagerArticles(){
+        $user=Auth::user();
+        $theme = $user->managedTheme;
+
+        return view('articles.managerarticles',compact('theme'));
+    }
+    
 }

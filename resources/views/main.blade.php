@@ -12,7 +12,7 @@
         <a href="/" id="logo">Tech Horizons</a>
         <ul>
             <a href="{{ route('home') }}"><li>Home</li></a>
-            <a><li class="dropdown">Themes</li></a>
+            <a href="{{ route('showthemes') }}"><li>Themes</li></a>
             <!--<li class="dropdown">Catalogue
                 <div class="dropdown-menu">
                     <a>Intelligence artificielle</a>
@@ -23,14 +23,13 @@
                 </li>
             -->
             <a href="{{ route('register') }}"><button>Sign up</button></a>
-            <button><a href="/access" target="_blank">Sign in</a></button>
+            <a href="/access" target="_blank"><button>Sign in</button></a>
             
         </ul>
     </div>
 
      @yield('body')    
     
-
     @yield('script')
 </body>
 </html>

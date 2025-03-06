@@ -24,7 +24,7 @@
             </tr>
             @foreach($numerospublics as $numero)
             <tr>
-            <td>{{$numero->title}}</td>
+            <td><a href="/numero/{{$numero->id}}">{{$numero->title}}</a></td>
             <td style="width:900px">{{$numero->description}}</td>
             <td>{{$numero->status}}</td>
             <td>
@@ -33,6 +33,7 @@
             <input type="hidden" name="numid" value="{{$numero->id}}">
             <input type="hidden" name="action" value="private">
             <input class="btn" type="submit" value="private">
+            <input class="btn" type="submit" value="delete">
             </form>
             </td>
             </tr>
@@ -49,7 +50,7 @@
             </tr>
             @foreach($numerosprivates as $numero)
             <tr>
-            <td>{{$numero->title}}</td>
+            <td><a href="/numero/{{$numero->id}}">{{$numero->title}}</a></td>
             <td style="width:900px">{{$numero->description}}</td>
             <td>{{$numero->status}}</td>
             <td>
@@ -58,6 +59,7 @@
             <input type="hidden" name="numid" value="{{$numero->id}}">
             <input type="hidden" name="action" value="public">
             <input class="btn" type="submit" value="public">
+            <input class="btn" type="submit" value="delete">
             </form>
             </td>
             </tr>

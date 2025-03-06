@@ -40,6 +40,7 @@ Route::put('/articles/{id}/update', [ArticleController::class, 'update'])->name(
 Route::post('/articles/store', [ArticleController::class, 'subscriberStore'])->name('article.store');
 
 //subscribers
+Route::get('/Showthemes', [ThemeController::class, 'ShowallThemes'])->name('showthemes');//guest
 Route::get('/themes', [ThemeController::class, 'allThemes'])->name('themes');
 Route::post('/themes/{id}/subscribe', [ThemeController::class, 'subscribe'])->name('theme.subscribe');
 Route::post('/themes/{id}/unsubscribe', [ThemeController::class, 'unsubscribetheme'])->name('theme.unsubscribe');
@@ -71,10 +72,12 @@ Route::middleware('auth')->group(function () {
 });
 
 Route::get('/responsible/dashboard', [ThemeController::class, 'dashboard'])->name('responsible.dashboard');
+Route::get('/statistics',[EditorController::class,'statistics']);
 
 // 1️ Articles liés au thème du responsable connecté
 Route::get('/responsible/articles', [ArticleController::class, 'index'])->name('responsible.articles');
 Route::get('/responsible/articles/create', [ArticleController::class, 'create'])->name('responsible.articles.create');
+Route::get('/responsible/showarticles',[ThemeController::class , 'ManagerArticles']);
 Route::post('/responsible/articles', [ArticleController::class, 'store'])->name('responsible.articles.store');
 Route::delete('/responsible/articles/{id}', [ArticleController::class, 'destroy'])->name('responsible.articles.destroy');
 

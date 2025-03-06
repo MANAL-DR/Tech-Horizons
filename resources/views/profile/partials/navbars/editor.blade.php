@@ -10,6 +10,7 @@
             </li>
             <a href="/newIssue"><li>Create +</li>
             <a href="{{route('allnum')}}"><li>Issues</li></a>
+            <a href="statistics"><li>Statistics</li></a>
             <li class="dropdown">{{Auth::user()->name}} 
                 <ul class="dropdown-menu">
                   <form method="post" action="{{route('logout')}}" > 
