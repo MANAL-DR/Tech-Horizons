@@ -6,9 +6,13 @@ Welcome to Tech Horizons, an interactive digital magazine platform for tech enth
 Tech Horizons is a fully-featured, role-based online platform designed to streamline the process of managing and interacting with a digital magazine. It offers:
 
 Key Features:
+
 Personalized Experience: Users can subscribe, read, and track articles based on their interests.
+
 Role-Based Access: Subscribers, Theme Managers, and Editors each have tailored features and permissions.
+
 Article Submission & Moderation: Users can submit articles, while Theme Managers and Editors manage, moderate, and publish content.
+
 Engaging Community: Discussions, ratings, and interactive content bring knowledge-sharing to life.
 
 What I Learned
